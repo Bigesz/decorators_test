@@ -17,7 +17,7 @@
           <mat-card-title>Validator decorator</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <button color="primary" mat-raised-button>Validator decorator</button>
+          <button color="primary" mat-raised-button (click)="goTable()">Validator decorator</button>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
@@ -27,7 +27,8 @@
           <mat-card-title>Permission decorator</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <button color="primary" mat-raised-button>Permission decorator</button>
+          <mat-slide-toggle class="pb-1" [formControl]="roleControl">Szabi vagy?</mat-slide-toggle>
+          <button color="primary" mat-raised-button (click)="teszt()">Permission decorator</button>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>

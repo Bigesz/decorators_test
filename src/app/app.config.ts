@@ -10,7 +10,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateMessageFormatCompiler } from 'ngx-translate-messageformat-compiler';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { environment } from '../environments/environment';
+import { environment } from './environments/environment';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -41,10 +42,11 @@ export const appConfig: ApplicationConfig = {
       useValue: 'en'
     },
     importProvidersFrom(
-      provideFirebaseApp(() =>
-        initializeApp(environment.firebase)
-      )
+      provideFirebaseApp(() => initializeApp(environment.firebase))
     ),
-    importProvidersFrom(provideFirestore(() => getFirestore()))
+    importProvidersFrom(
+      provideFirestore(() => getFirestore())
+    ),
+    { provide: FIREBASE_OPTIONS, useValue: environment.firebase },
   ]
 };
