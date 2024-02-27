@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "decorators-test",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

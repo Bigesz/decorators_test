@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "decorators-test": {
+      "hosting": {
+        "decorators-test": [
+          "decorators-test"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "decorators-test"
+  }
+}
